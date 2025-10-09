@@ -19,7 +19,7 @@ public class Solution4 {
 
     public static boolean isHappy1(int n) {
         int slow = n;
-        int fast = n;
+        int fast = getNextNumber(n);
 
         while (slow != fast) {
             if (fast == 1) return true;

@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SelectionSort {
 
-    public static void selectionSortAsc(int[] arr) {
+    public static void selectionSortingAsc(int[] arr) {
         int n = arr.length, comparisons = 0, swaps = 0;
 
         for (int i = 0; i < n - 1; i++) {
@@ -28,7 +28,7 @@ public class SelectionSort {
         System.out.println(swaps);
     }
 
-    public static void selectionSortDesc(int[] arr){
+    public static void selectionSortingDesc(int[] arr){
         int n = arr.length, comparisons = 0, swaps = 0;
 
         for(int i = n - 1; i > 0; i--){
@@ -55,8 +55,8 @@ public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {11, 7, 3, 9, 22, 15, 47, 1, 99};
         int[] arr1 = {11, 7, 3, 9, 22, 15, 47, 1, 99};
-        selectionSortAsc(arr);
+        selectionSortingAsc(arr);
         System.out.println();
-        selectionSortDesc(arr1);
+        selectionSortingDesc(arr1);
     }
 }

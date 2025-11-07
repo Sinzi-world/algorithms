@@ -3,32 +3,60 @@ package solutions.sorting;
 import java.util.Arrays;
 
 public class SelectionSort {
-    public static void selectionSort(int[] arr){
+
+    public static void selectionSortAsc(int[] arr) {
         int n = arr.length, comparisons = 0, swaps = 0;
 
-        for (int i = n - 1; i > 0; i--){
-            int maxIndex = i;
-            for (int j = 0; j < i; j++){
+        for (int i = 0; i < n - 1; i++) {
+            int minElIdx = i;
+            for (int j = i + 1; j < n; j++) {
                 comparisons++;
-                if(arr[j] > arr[maxIndex]){
-                    maxIndex = j;
+                if (arr[j] < arr[minElIdx]) {
+                    minElIdx = j;
+
                 }
             }
-            if(maxIndex != i) {
+            if (minElIdx != i) {
                 int temp = arr[i];
-                arr[i] = arr[maxIndex];
-                arr[maxIndex] = temp;
+                arr[i] = arr[minElIdx];
+                arr[minElIdx] = temp;
                 swaps++;
             }
         }
-
         System.out.println(Arrays.toString(arr));
         System.out.println(comparisons);
         System.out.println(swaps);
     }
 
+    public static void selectionSortDesc(int[] arr){
+        int n = arr.length, comparisons = 0, swaps = 0;
+
+        for(int i = n - 1; i > 0; i--){
+            int maxElIdx = i;
+            for(int j = 0; j < i; j++){
+                comparisons++;
+                if (arr[j] > arr[maxElIdx]) {
+                    maxElIdx = j;
+                }
+            }
+            if (maxElIdx != i) {
+                int temp = arr[i];
+                arr[i] = arr[maxElIdx];
+                arr[maxElIdx] = temp;
+                swaps++;
+            }
+        }
+        System.out.println(Arrays.toString(arr));
+        System.out.println(comparisons);
+        System.out.println(swaps);
+    }
+
+
     public static void main(String[] args) {
         int[] arr = {11, 7, 3, 9, 22, 15, 47, 1, 99};
-        selectionSort(arr);
+        int[] arr1 = {11, 7, 3, 9, 22, 15, 47, 1, 99};
+        selectionSortAsc(arr);
+        System.out.println();
+        selectionSortDesc(arr1);
     }
 }
